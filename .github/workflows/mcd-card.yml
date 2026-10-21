@@ -1,0 +1,28 @@
+name: McReadme Card
+
+on:
+  schedule:
+    - cron: '17 1 * * *' # 09:17 Asia/Shanghai
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mcd-card
+  cancel-in-progress: false
+
+jobs:
+  card:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate McReadme card
+        uses: colorfulee/McReadme-Card@dd03f05566f4d14b8f15a340963614638ecf4064
+        with:
+          mcd_token: ${{ secrets.MCD_MCP_TOKEN }}
+          github_user: danliustc
+          theme: receipt
+          privacy: strict
+          history: 'off'
