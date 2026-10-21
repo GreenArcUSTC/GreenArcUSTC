@@ -22,7 +22,7 @@ jobs:
         uses: colorfulee/McReadme-Card@dd03f05566f4d14b8f15a340963614638ecf4064
         with:
           mcd_token: ${{ secrets.MCD_MCP_TOKEN }}
-          github_user: danliustc
+          github_user: GreenArcUSTC
           theme: receipt
           privacy: strict
           history: 'off'
